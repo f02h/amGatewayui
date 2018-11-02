@@ -48,7 +48,7 @@
         methods: {
             getData: function () {
                 this.loading = true;
-                axios.get(`http://localhost:8000/users?token=`+localStorage.getItem('token'))
+                axios.get(process.env.API_URL+`/users?token=`+localStorage.getItem('token'))
                     .then((response)  =>  {
                         this.loading = false;
                         this.data = response.data;

@@ -48,7 +48,7 @@
                 Vue.use(VueResource);
                 this.loader = true
                 this.infoError = false
-                this.$http.post('http://localhost:8000/auth/login', {
+                this.$http.post(process.env.API_URL+'/auth/login', {
                     email: this.email,
                     password: this.password
                 }).then((response) => {
