@@ -6,7 +6,7 @@
 
         <div :class="{'is-waiting': loader}">
             <div class="form-block">
-                <input v-model.trim="email" class="field form-control" name="email" type="email" placeholder="E-mail address"
+                <input v-model.trim="username" class="field form-control" name="username"  placeholder="username"
                        required>
             </div>
 
@@ -49,7 +49,7 @@
                 this.loader = true
                 this.infoError = false
                 this.$http.post(process.env.API_URL+'/auth/login', {
-                    email: this.email,
+                    username: this.username,
                     password: this.password
                 }).then((response) => {
                     localStorage.setItem('token', response.body.token)
